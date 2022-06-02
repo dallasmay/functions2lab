@@ -6,13 +6,20 @@
 */
 
 // CODE HERE
-
+const multiply = (num1, num2, callback) => {
+  return callback(num1 * num2);
+};
+// function multiply(num1, num2, callback) {
+//   return callback(num1, num2)
+// }
+// let test = multiply(5, 3, multiplyCallback);
+// console.log(test);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// multiply(4, 3, answer => {
+// multiply(4, 3, (answer) => {
 //   console.log('The answer is ' + answer) //should console.log 12
 // })
 
@@ -23,7 +30,7 @@
 // The names array will be used in problems 2 - 6.
 
 // Do not edit the code below.
-var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
+let names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 // Do not edit the code above.
 
 
@@ -36,7 +43,9 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const first = (arr, callback) => {
+  return callback(arr[0])
+};
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -56,7 +65,9 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+const last = (arr, callback) => {
+  return callback(arr[6]);
+};
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -78,7 +89,13 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const contains = (arr, nameInput, callback) => {
+  if (arr.includes(nameInput)) {
+    return callback(true);
+  } else {
+    return callback(false);
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -103,7 +120,14 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+const uniq = (arr, callback) => {
+  const mySet = new Set(arr)
+  if (mySet.size === arr.length) {
+    return callback(arr)
+  } else {
+    return callback(mySet)
+  }
+};
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -112,7 +136,9 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+uniq(names, uniqArr => {
+  console.log(`The new names array with all the duplicate items removed is ${names}`);
+});
 
 
 ////////// PROBLEM 6 //////////
