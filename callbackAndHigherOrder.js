@@ -121,12 +121,14 @@ const contains = (arr, nameInput, callback) => {
 
 // CODE HERE
 const uniq = (arr, callback) => {
-  const mySet = new Set(arr)
-  if (mySet.size === arr.length) {
-    return callback(arr)
-  } else {
-    return callback(mySet)
+  for (i = 0; i < arr.length; i++) {
+    for (j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        arr.splice(j, 1);
+      }
+    }
   }
+  return callback(arr)
 };
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -137,7 +139,7 @@ const uniq = (arr, callback) => {
 
 // CODE HERE
 uniq(names, uniqArr => {
-  console.log(`The new names array with all the duplicate items removed is ${names}`);
+  console.log(`The new names array with all the duplicate items removed is ${uniqArr}`);
 });
 
 
