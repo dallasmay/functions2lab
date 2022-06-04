@@ -88,7 +88,8 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-// const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+const myStrongest = monstersInYourPocket.filter(element => element.CP > 200);
+// console.log(myStrongest);
 
 
 
@@ -99,6 +100,7 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 {"price":80,"tax":0.11},{"price":69,"tax":0.06},{"price":68,"tax":0.14},
 {"price":72,"tax":0.14},{"price":51,"tax":0.09},{"price":89,"tax":0.15},
 {"price":48,"tax":0.13}];
+
 // Do not edit code above.
 
 /*
@@ -106,7 +108,8 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
-
+const orderTotals = orders.map(element => element.price * (1 + element.tax)).reduce((acc, current) => acc + current);
+// console.log(orderTotals);
 
 
 ////////// PROBLEM 6 //////////
@@ -119,6 +122,8 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 {"owner":"Barry","price":9},{"owner":"Bob","price":123},{"owner":"Bob","price":135},
 {"owner":"Barry","price":30},{"owner":"Barry","price":129},{"owner":"Barry","price":38},
 {"owner":"Bob","price":133},{"owner":"Barry","price":109},{"owner":"Bob","price":115}];
+
+// const purchases = [{"owner": "Bob", "price": 100}, {"owner": "Bob", "price": 50}, {"owner": "Bob", "price": 200}, {"owner": "Bob", "price": 10}, {"owner": "Barry", "price": 100}, {"owner": "Bob", "price": 100}, {"owner": "Barry", "price": 200},]
 // Do not edit the code above.
 
 /*
@@ -126,3 +131,5 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+const bobsTotal = purchases.filter(element => element.owner === "Bob").map(element => element.price).reduce((acc, current) => acc + current);
+// console.log(bobsTotal);
