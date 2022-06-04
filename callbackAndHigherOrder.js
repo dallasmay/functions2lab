@@ -19,9 +19,9 @@ const multiply = (num1, num2, callback) => {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// multiply(4, 3, (answer) => {
-//   console.log('The answer is ' + answer) //should console.log 12
-// })
+multiply(4, 3, (answer) => {
+  console.log('The answer is ' + answer) //should console.log 12
+})
 
 
 
